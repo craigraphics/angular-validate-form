@@ -1,6 +1,6 @@
-# angular-starter
+# angular-validate-form
 
-This is a repository for a starter application for a Single Page MEAN Stack application.
+A form validate example with AngularJS.
 
 ## Includes:
 1. Yeoman as the generetor
@@ -9,15 +9,10 @@ This is a repository for a starter application for a Single Page MEAN Stack appl
 4. Libsass
 5. Bootstrap Sass Official
 6. Bootswatch as Bootstrap theme
-7. Font-awesome
 
 ## Angular dependencies:
-1. angular-ui-router
-2. angular-spinner
-3. angular-strap
-4. angular-animate
-5. angular-touch
-6. angular-sanitize
+1. angular-auto-validate
+2. angular-ladda
 
 ### Installation ###
 1. Run `cd my-project` from the command line ('my-project' is the alias of the name of the folder).
