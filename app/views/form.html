@@ -1,0 +1,47 @@
+
+
+<div class="container main-content" ng-controller="FormSubmitCtrl as form">
+  <h3>Form</h3>
+  <form ng-submit="form.onSubmit()" novalidate="novalidate" ng-hide="form.submitted">
+    <div class="form-group">
+      <label for="name" class="control-label">Name</label>
+      <input type="text" class="form-control" ng-model="form.formModel.name" id="name" required="required">
+    </div>
+    <div class="form-group">
+      <label for="email" class="control-label">Email</label>
+      <input type="email" class="form-control" ng-model="form.formModel.email" id="email" required="required">
+    </div>
+    <div class="form-group">
+      <label for="username" class="control-label">Username</label>
+      <input type="text" class="form-control" ng-model="form.formModel.username" ng-pattern="/^[A-Za-z0-9_]{1,32}$/" ng-minlength="7" ng-pattern-err-type="badUsername" id="username" required="required">
+    </div>
+    <div class="form-group">
+      <label for="age" class="control-label">Age</label>
+      <input type="number" class="form-control" ng-model="form.formModel.age" min="18" max="64" id="age" ng-min-err-type="tooYoung" ng-max-err-type="tooOld" required="required">
+    </div>
+    <div class="form-group">
+      <label for="sex" class="control-label">Sex</label>
+      <select id="sex" class="form-control" ng-model="form.formModel.sex" required="required">
+        <option value="">Please Choose</option>
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="password" class="control-label">Password</label>
+      <input type="password" class="form-control" ng-model="form.formModel.password" id="password" required="required" ng-minlength="10">
+    </div>
+    <div class="form-group">
+      <div class="alert alert-danger text-center" ng-show="form.hasError">
+        <h3>There was a problem registering, please try again later!</h3>
+      </div>
+      <button class="btn btn-primary" ladda="form.submitting" data-style="expand-right" type="submit">
+        <span ng-show="form.submitting">Registering</span>
+        <span ng-show="!form.submitting">Register</span>
+      </button>
+    </div>
+  </form>
+  <div class="alert alert-info text-center" ng-show="form.submitted">
+    <h3>Thanks for Registering!</h3>
+  </div>
+</div>
